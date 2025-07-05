@@ -1,7 +1,7 @@
 # Titanic Survival Analysis
 
 This repository explores the classic Titanic dataset from Kaggle to identify key factors that influenced passenger survival.  
-It is part of an end-to-end machine learning pipeline consisting of data exploration, preprocessing, model building, evaluation, and (optionally) deployment.
+It is part of an end-to-end machine learning pipeline consisting of data exploration, preprocessing, model building and evaluation.
 
 ## Project Overview
 
@@ -10,10 +10,8 @@ The project is divided into multiple stages:
 1. **Exploratory Data Analysis (EDA)**  
    Identify patterns and correlations, clean the data, and engineer useful features.
 
-2. **Modeling (upcoming)**  
+2. **Modeling**  
    Train and evaluate machine learning models (e.g., logistic regression, random forest).
-
-Currently, the EDA phase is complete and documented in the first notebook.
 
 ## Dataset
 
@@ -39,10 +37,22 @@ Currently, the EDA phase is complete and documented in the first notebook.
 - `CabinNumber`: numeric part of Cabin, tested but showed no clear signal
 - `FareBin`, `LogFareBin`: binned versions for visual inspection
 
+## Modeling Summary
+
+Both a Logistic Regression and a Random Forest model were trained using a preprocessing pipeline (imputation, scaling, encoding).  
+The models were evaluated on a test set using metrics such as accuracy, F1-score, and ROC AUC.  
+Logistic Regression performed slightly better overall.
+
+| Metric                | Logistic Regression | Random Forest     |
+|-----------------------|---------------------|--------------------|
+| Accuracy              | 0.79                | 0.78               |
+| F1-Score (Survived)   | 0.71                | 0.70               |
+| ROC AUC               | 0.8472              | 0.8354             |
+
 ## Repository Structure
 
 - `titanic_eda_modeling.ipynb` – EDA and feature exploration  
-- *(upcoming)* `titanic_model_training.ipynb` – Model building and evaluation  
+- `titanic_model_training.ipynb` – Model building and evaluation  
 - `README.md` – Project description  
 - `train.csv` – Training data
 
@@ -51,8 +61,6 @@ Currently, the EDA phase is complete and documented in the first notebook.
 - Python 3.8+
 - pandas, numpy, matplotlib, seaborn
 - scikit-learn
-
-(Exact versions will be added once modeling begins.)
 
 ## Author
 
